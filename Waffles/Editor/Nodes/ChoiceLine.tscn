@@ -1,0 +1,28 @@
+[gd_scene format=2]
+
+[node name="ChoiceLine" type="HBoxContainer"]
+anchor_right = 1.0
+margin_bottom = 24.0
+
+[node name="lineedit" type="LineEdit" parent="."]
+margin_right = 471.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 150, 0 )
+size_flags_horizontal = 3
+placeholder_text = "Text"
+
+[node name="hiddenCheckBox" type="CheckBox" parent="."]
+margin_left = 475.0
+margin_right = 549.0
+margin_bottom = 24.0
+text = "Hidden"
+
+[node name="conditionedit" type="LineEdit" parent="."]
+margin_left = 553.0
+margin_right = 1024.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_horizontal = 3
+placeholder_text = "Condition"
+caret_blink = true
+caret_blink_speed = 0.5

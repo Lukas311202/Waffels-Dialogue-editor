@@ -1,0 +1,379 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://addons/Waffles/Editor/Character window.gd" type="Script" id=1]
+[ext_resource path="res://addons/Waffles/Editor/Dialogue Editor.gd" type="Script" id=2]
+[ext_resource path="res://addons/Waffles/Editor/naming field.gd" type="Script" id=3]
+[ext_resource path="res://addons/Waffles/Editor/info panel.gd" type="Script" id=4]
+[ext_resource path="res://addons/Waffles/Editor/Character Editor.gd" type="Script" id=5]
+[ext_resource path="res://addons/Waffles/Editor/DialogueGraphEdit.gd" type="Script" id=6]
+[ext_resource path="res://addons/Waffles/Editor/Story window.gd" type="Script" id=7]
+[ext_resource path="res://addons/Waffles/Editor/stretch_slider.tscn" type="PackedScene" id=8]
+
+[node name="Dialogue Editor" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_vertical = 3
+script = ExtResource( 2 )
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 0.0416667
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+anchor_left = 0.00488281
+anchor_top = 0.16
+anchor_right = 1.0
+anchor_bottom = 0.84
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="MenuButton" type="MenuButton" parent="Panel/HBoxContainer"]
+margin_right = 35.0
+margin_bottom = 20.0
+text = "File"
+items = [ "test", null, 0, false, false, 0, 0, null, "", false, "New", null, 0, false, false, 1, 0, null, "", false, "Open", null, 0, false, false, 2, 0, null, "", false, "Save", null, 0, false, false, 3, 0, null, "", false, "refresh", null, 0, false, false, 4, 0, null, "", false ]
+
+[node name="Editor button" type="MenuButton" parent="Panel/HBoxContainer"]
+margin_left = 39.0
+margin_right = 88.0
+margin_bottom = 20.0
+text = "Editor"
+items = [ "Dialogue", null, 0, false, false, 0, 0, null, "", false, "Choice", null, 0, false, false, 1, 0, null, "", false, "Start", null, 0, false, false, 2, 0, null, "", false, "End", null, 0, false, false, 3, 0, null, "", false, "Signal", null, 0, false, false, 4, 0, null, "", false ]
+
+[node name="MarginContainer" type="HBoxContainer" parent="."]
+anchor_top = 0.045
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+
+[node name="file selection" type="Control" parent="MarginContainer"]
+margin_right = 235.0
+margin_bottom = 573.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.18
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Panel" type="Panel" parent="MarginContainer/file selection"]
+self_modulate = Color( 0.796078, 0.796078, 0.796078, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="character window" type="Control" parent="MarginContainer/file selection/Panel"]
+anchor_right = 0.984962
+anchor_bottom = 0.471204
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/file selection/Panel/character window"]
+anchor_left = 0.0687023
+anchor_top = 0.0946745
+anchor_right = 0.938932
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/file selection/Panel/character window/ScrollContainer"]
+margin_right = 92.0
+margin_bottom = 68.0
+custom_constants/separation = 8
+alignment = 1
+
+[node name="Character" type="Label" parent="MarginContainer/file selection/Panel/character window"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -20.0
+margin_top = 6.0
+margin_right = 20.0
+margin_bottom = 20.0
+grow_horizontal = 2
+text = "Character"
+align = 1
+valign = 1
+
+[node name="Button" type="Button" parent="MarginContainer/file selection/Panel/character window/Character"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 2.66544
+margin_top = -10.0
+margin_right = 22.6654
+margin_bottom = 10.0
+hint_tooltip = "Add a new character"
+text = "+"
+
+[node name="Button2" type="Button" parent="MarginContainer/file selection/Panel/character window/Character"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 27.6654
+margin_top = -10.0
+margin_right = 47.6654
+margin_bottom = 10.0
+hint_tooltip = "terminante selected character"
+text = "-"
+
+[node name="Story window" type="Control" parent="MarginContainer/file selection/Panel"]
+anchor_top = 0.483421
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label" type="Label" parent="MarginContainer/file selection/Panel/Story window"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -30.0
+margin_top = 6.0
+margin_right = 30.0
+margin_bottom = 20.0
+grow_horizontal = 2
+text = "Dialogues"
+align = 1
+valign = 1
+
+[node name="Button" type="Button" parent="MarginContainer/file selection/Panel/Story window/Label"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 3.5
+margin_top = -10.0
+margin_right = 23.5
+margin_bottom = 10.0
+text = "+"
+
+[node name="Button2" type="Button" parent="MarginContainer/file selection/Panel/Story window/Label"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 28.5
+margin_top = -10.0
+margin_right = 48.5
+margin_bottom = 10.0
+text = "-"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/file selection/Panel/Story window"]
+anchor_left = 0.0683594
+anchor_top = 0.125
+anchor_right = 0.938477
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/file selection/Panel/Story window/ScrollContainer"]
+margin_right = 192.0
+margin_bottom = 80.0
+custom_constants/separation = 4
+alignment = 1
+
+[node name="Character Window" type="Panel" parent="MarginContainer" groups=["editor"]]
+self_modulate = Color( 0.756863, 0.756863, 0.756863, 1 )
+margin_left = 239.0
+margin_right = 1024.0
+margin_bottom = 573.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.6
+script = ExtResource( 5 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/Character Window"]
+anchor_left = 0.0427746
+anchor_top = 0.056719
+anchor_right = 0.957225
+anchor_bottom = 0.943281
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Character Window/ScrollContainer"]
+margin_right = 717.844
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="FileDialog" type="FileDialog" parent="MarginContainer/Character Window"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -236.5
+margin_top = -192.5
+margin_right = 236.5
+margin_bottom = 192.5
+window_title = "Datei öffnen"
+resizable = true
+mode = 0
+filters = PoolStringArray( "*png", "PNG", "*jpeg", "*json" )
+
+[node name="stretch_slider" parent="MarginContainer/Character Window" instance=ExtResource( 8 )]
+margin_left = -114.0
+margin_top = 11.0
+margin_right = -11.0
+margin_bottom = 27.0
+min_value = 0.1
+max_value = 5.0
+value = 0.6
+
+[node name="Button" type="Button" parent="MarginContainer/Character Window"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -146.0
+margin_top = 7.0
+margin_right = -126.0
+margin_bottom = 27.0
+text = "X"
+flat = true
+
+[node name="GraphEdit" type="GraphEdit" parent="MarginContainer" groups=["editor"]]
+visible = false
+margin_left = 212.0
+margin_right = 1024.0
+margin_bottom = 573.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.7
+right_disconnects = true
+scroll_offset = Vector2( -298, 0 )
+show_zoom_label = true
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="stretch_slider" parent="MarginContainer/GraphEdit" instance=ExtResource( 8 )]
+min_value = 0.1
+max_value = 5.0
+value = 0.7
+exp_edit = false
+
+[node name="close_btn" type="Button" parent="MarginContainer/GraphEdit"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -161.0
+margin_top = 11.0
+margin_right = -141.0
+margin_bottom = 32.0
+text = "x"
+flat = true
+
+[node name="naming field" type="Panel" parent="."]
+visible = false
+self_modulate = Color( 0.435294, 0.47451, 0.611765, 1 )
+anchor_left = 0.386719
+anchor_top = 0.428333
+anchor_right = 0.613281
+anchor_bottom = 0.603333
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label" type="Label" parent="naming field"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -51.0
+margin_top = 8.0
+margin_right = 51.0
+margin_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Enter The Name"
+align = 1
+valign = 1
+
+[node name="LineEdit" type="LineEdit" parent="naming field"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -87.5
+margin_top = -12.0
+margin_right = 87.5
+margin_bottom = 12.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="naming field"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -52.0
+margin_top = -31.0
+margin_right = 54.0
+margin_bottom = -11.0
+custom_constants/separation = 30
+alignment = 1
+
+[node name="Button" type="Button" parent="naming field/HBoxContainer"]
+margin_right = 30.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+text = "Ok"
+
+[node name="Button2" type="Button" parent="naming field/HBoxContainer"]
+margin_left = 60.0
+margin_right = 114.0
+margin_bottom = 20.0
+text = "Cancel"
+
+[node name="info panel" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -196.0
+margin_top = -57.0
+margin_right = 196.0
+margin_bottom = -17.0
+script = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="info panel"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 8.0
+margin_top = -7.0
+margin_right = 48.0
+margin_bottom = 7.0
+
+[node name="Label2" type="Label" parent="info panel"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -54.0
+margin_top = -7.0
+margin_right = -14.0
+margin_bottom = 7.0
+grow_horizontal = 0
+
+[connection signal="pressed" from="MarginContainer/file selection/Panel/character window/Character/Button" to="MarginContainer/file selection/Panel/character window" method="add_character"]
+[connection signal="pressed" from="MarginContainer/file selection/Panel/character window/Character/Button2" to="MarginContainer/file selection/Panel/character window" method="delete_character"]
+[connection signal="pressed" from="MarginContainer/file selection/Panel/Story window/Label/Button" to="MarginContainer/file selection/Panel/Story window" method="create_new_object"]
+[connection signal="pressed" from="MarginContainer/file selection/Panel/Story window/Label/Button2" to="MarginContainer/file selection/Panel/Story window" method="delete_current_object"]
+[connection signal="pressed" from="MarginContainer/Character Window/Button" to="MarginContainer/Character Window" method="hide"]
+[connection signal="_end_node_move" from="MarginContainer/GraphEdit" to="MarginContainer/GraphEdit" method="_on_GraphEdit__end_node_move"]
+[connection signal="connection_request" from="MarginContainer/GraphEdit" to="." method="_on_GraphEdit_connection_request"]
+[connection signal="connection_to_empty" from="MarginContainer/GraphEdit" to="." method="_on_GraphEdit_connection_to_empty"]
+[connection signal="copy_nodes_request" from="MarginContainer/GraphEdit" to="." method="_on_GraphEdit_copy_nodes_request"]
+[connection signal="delete_nodes_request" from="MarginContainer/GraphEdit" to="." method="_on_GraphEdit_delete_nodes_request"]
+[connection signal="disconnection_request" from="MarginContainer/GraphEdit" to="." method="_on_GraphEdit_disconnection_request"]
+[connection signal="node_selected" from="MarginContainer/GraphEdit" to="." method="_on_GraphEdit_node_selected"]
+[connection signal="paste_nodes_request" from="MarginContainer/GraphEdit" to="." method="_on_GraphEdit_paste_nodes_request"]
+[connection signal="pressed" from="MarginContainer/GraphEdit/close_btn" to="MarginContainer/GraphEdit" method="hide"]
+[connection signal="text_entered" from="naming field/LineEdit" to="naming field" method="_on_LineEdit_text_entered"]
+[connection signal="pressed" from="naming field/HBoxContainer/Button" to="naming field" method="return_result"]
+[connection signal="pressed" from="naming field/HBoxContainer/Button2" to="naming field" method="cancel"]

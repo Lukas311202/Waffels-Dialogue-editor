@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/Waffles/artwork/trash-can-svgrepo-com.svg" type="Texture" id=1]
+
+[node name="character_btn" type="HBoxContainer"]
+margin_right = 319.0
+margin_bottom = 40.0
+
+[node name="Button" type="Button" parent="."]
+margin_right = 285.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.6
+
+[node name="delete_btn" type="TextureButton" parent="."]
+margin_left = 289.0
+margin_right = 319.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 30, 30 )
+texture_normal = ExtResource( 1 )
+expand = true
+stretch_mode = 5
