@@ -9,4 +9,12 @@ This plugin also includes a npc scheme file, this file basicly says which inform
 Creating new Nodes
 This plugin comes with basic nodes such as conversation,question, signal nodes, etc, if you personally something you can easily add your own nodes
 
+steps to create your own node:
+1. create or duplicate an existing node and change the code and structure to fit your needs, you can use Dialogue cNode as a reference how a node works
+2. functions every node needs:
+2.1: clost_request() -> sends a signal to the editor to delete this node, you can just copy paste the 
+code from Dialogue Node
+2.2: resize_request(): optional, also just copy paste
+2.3: save_node(): called when you save or close your dialogue_file, this is all the data it needs to be correctly loaded in the editor agagin, also requires a 'type' attribute that is a string, so that the Interface knows with which it is dealing with.
+2.4: load_node(data): called when the node gets instantiatet, loads the data you have saved in save_node()
 
