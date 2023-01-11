@@ -1,6 +1,0 @@
-{
-    "name":{"type":"textfield", "default":""},
-    "description":{"type":"textfield", "default":""},
-    "relationship":{"type":"textfield", "default":""},
-    "introduction_dialogue":{"type":"dialogue_selection", "default":""}
-}
