@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/Waffles/Editor/Nodes/ChoiceLine.gd" type="Script" id=1]
+
+[node name="ChoiceLine" type="HBoxContainer"]
+anchor_right = 1.0
+margin_bottom = 24.0
+script = ExtResource( 1 )
+
+[node name="lineedit" type="LineEdit" parent="."]
+margin_right = 946.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 150, 0 )
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.5
+placeholder_text = "Text"
+
+[node name="hiddenCheckBox" type="CheckBox" parent="."]
+margin_left = 950.0
+margin_right = 1024.0
+margin_bottom = 24.0
+text = "Hidden"
+
+[node name="conditionedit" type="LineEdit" parent="."]
+visible = false
+margin_left = 754.0
+margin_right = 1024.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 100, 0 )
+size_flags_horizontal = 3
+placeholder_text = "Condition"
+caret_blink = true
+caret_blink_speed = 0.5
+
+[connection signal="pressed" from="hiddenCheckBox" to="." method="_on_hiddenCheckBox_pressed"]

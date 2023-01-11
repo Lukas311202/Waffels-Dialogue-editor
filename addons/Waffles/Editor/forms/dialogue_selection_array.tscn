@@ -1,0 +1,20 @@
+[gd_scene format=2]
+
+[node name="dialogue_selection_array" type="VBoxContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_right = 41.0
+margin_bottom = 20.0
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+margin_right = 20.0
+margin_bottom = 20.0
+text = "+"
+
+[node name="Button2" type="Button" parent="HBoxContainer"]
+margin_left = 24.0
+margin_right = 41.0
+margin_bottom = 20.0
+text = "-"
