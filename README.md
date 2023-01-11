@@ -16,5 +16,5 @@ steps to create your own node:
   code from Dialogue Node
   2.2: resize_request(): optional, also just copy paste
   2.3: save_node(): called when you save or close your dialogue_file, this is all the data it needs to be correctly loaded in the editor agagin, also requires a 'type' attribute that is a string, so that the Interface knows with which it is dealing with.
-  2.4: load_node(data): called when the node gets instantiatet, loads the data you have saved in save_node()
+  2.4: load_node(data): called when the node gets instantiatet, loads the data you have saved in save_node(). you don't have to load the position and size, that is handled by the editor automaticly
 3. you have to update the execute_type() function in 'res://addons/Waffles/User Interface/Dialogue Interface.gd' and add your own type.
