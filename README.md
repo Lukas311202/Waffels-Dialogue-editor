@@ -10,6 +10,7 @@ Creating new Nodes
 This plugin comes with basic nodes such as conversation,question, signal nodes, etc, if you personally something you can easily add your own nodes
 
 steps to create your own node:
+0. add the "graph_node" group to your new node
 1. create or duplicate an existing node and change the code and structure to fit your needs, you can use Dialogue Node as a reference how a node works
 2. functions every node needs:
   2.1: clost_request() -> sends a signal to the editor to delete this node, you can just copy paste the 
